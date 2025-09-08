@@ -1,0 +1,54 @@
+# Build directories
+/cmake-build-debug/
+
+# CMake generated files
+/CMakeCache.txt
+/CMakeFiles/
+/cmake_install.cmake
+/build.ninja
+/rules.ninja
+/CMakeDetermineCompilerABI_C.bin
+/CMakeDetermineCompilerABI_CXX.bin
+/CMakeSystem.cmake
+/CompilerIdC/
+/CompilerIdCXX/
+/CMakeConfigureLog.yaml
+/CMakeScratch/
+/TargetDirectories.txt
+/cmake.check_cache
+
+
+# CMake logs or outputs
+/clion-Debug-log.txt
+/clion-environment.txt
+
+# Compilation object files
+/src/**/*.o
+/LoggingLibrary.dir/
+
+# IDE or editor files
+/.idea/
+/.vscode/
+/*.suo
+/*.user
+/*.userosscache
+/*.sdf
+*.ncb
+*.suo
+*.pdb
+*.ilk
+*.aps
+*.dll
+*.lib
+*.so
+*.dylib
+
+# Logs and temporary files
+/test/Temporary/
+/Testing/LastTest.log
+
+# Other
+.DS_Store
+*.swp
+*.bak
+*.tmp

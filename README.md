@@ -1,0 +1,1 @@
+# opLog - Logging Library in C++.
