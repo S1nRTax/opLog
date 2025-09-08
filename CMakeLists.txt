@@ -1,10 +1,13 @@
 cmake_minimum_required(VERSION 3.31)
 project(opLog VERSION 1.0.0)
 
+
+file(GLOB APPENDERS "src/appender/*.cpp") 
+
 add_library(opLog
         src/logger.cpp
         src/formatter.cpp
-        src/appender.cpp
+        ${APPENDERS}
 )
 
 target_include_directories(
