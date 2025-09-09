@@ -1,6 +1,15 @@
+#ifndef CONSOLE_APPENDER_H
+#define CONSOLE_APPENDER_H
+
+#include <iostream>
+#include "IAppender.h"
 
 
-#ifndef APPENDER_H
-#define APPENDER_H
+class ConsoleAppender final : public IAppender {
+    public:
+    ConsoleAppender() = default;
+    void write(const std::string& message) override;
 
-#endif //APPENDER_H
+};
+
+#endif //CONSOLE_APPENDER_H
