@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <sstream>
 
+PlainTextFormatter::PlainTextFormatter(const FormatStyle style) : style(style) {}
 
 std::string PlainTextFormatter::logLevelToString(const LogLevel& logLevel) {
     static const char* LOG_LEVEL_STRINGS[] = {
@@ -15,9 +16,20 @@ std::string PlainTextFormatter::format(const LogRecord& record) {
     const std::tm* localTime = std::localtime(&time);
 
     std::ostringstream oss;
-    oss << "[" <<std::put_time(localTime, "%Y-%m-%d %H:%M:%S") << "] "
-        << "[" << logLevelToString(record.logLevel) << "] "
-        << record.message ;
+
+    switch (style) {
+        case FormatStyle::STYLE_WITH_BRACKETS:
+            // [YYYY-MM-DD] [log severity] [message]
+            oss << "[" <<std::put_time(localTime, "%Y-%m-%d %H:%M:%S") << "] "
+            << "[" << logLevelToString(record.logLevel) << "] "
+            << record.message ; break;
+
+        case FormatStyle::STYLE_NO_BRACKETS:
+            // YYYY-MM-DD log-severity message
+            oss <<std::put_time(localTime, "%Y-%m-%d %H:%M:%S")
+            << " " << logLevelToString(record.logLevel) << " "
+            << record.message ; break;
+    }
 
     return oss.str();
 }
