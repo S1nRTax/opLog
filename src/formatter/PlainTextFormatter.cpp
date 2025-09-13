@@ -32,14 +32,14 @@ std::string PlainTextFormatter::format(const LogRecord& record) {
     switch (style) {
         case FormatStyle::STYLE_WITH_BRACKETS:
             // [YYYY-MM-DD] [log severity] [message]
-            oss << "[" << logLevelToString(record.logLevel) << "] "
-                   "[" <<std::put_time(localTime, "%Y-%m-%d %H:%M:%S") << "] "
+            oss << "[" <<std::put_time(localTime, "%Y-%m-%d %H:%M:%S") << "] "
+                   "[" << logLevelToString(record.logLevel) << "] "
                     << record.message ; break;
 
         case FormatStyle::STYLE_NO_BRACKETS:
             // YYYY-MM-DD log-severity message
-            oss << " " << logLevelToString(record.logLevel) << " "
-                << std::put_time(localTime, "%Y-%m-%d %H:%M:%S") << " "
+            oss << std::put_time(localTime, "%Y-%m-%d %H:%M:%S") << " "
+                << logLevelToString(record.logLevel) << " "
                 << record.message ; break;
     }
 
