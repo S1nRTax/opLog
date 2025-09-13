@@ -3,7 +3,7 @@
 
 int main() {
 
-    const LogRecord record{LogLevel::DEBUG, "this is a debug message", std::chrono::system_clock::now()};
+    const LogRecord record{LogLevel::WARN, "this is a debug message", std::chrono::system_clock::now()};
 
     std::cout<< "Formatter with no brackets: \n";
     PlainTextFormatter plainTextFormatter(FormatStyle::STYLE_NO_BRACKETS);
