@@ -40,7 +40,7 @@ namespace opLog {
 
             Config() = default;
 
-            void pareConfigParse(const std::string& filepath);
+            void parseConfigFile(const std::string& filepath);
             void setDefaultConfig();
             std::string trim(const std::string& str);
             std::vector<std::string> split(const std::string& str, char delimiter);
