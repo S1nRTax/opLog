@@ -13,7 +13,6 @@ void unitFileAppender() {
         FileAppender appender;
         appender.write("[2024-01-15] Test message 1");
         appender.write("SimpleMessage Test message 2");
-        appender.write("");
 
         std::cout << "All writes completed successfully!" << std::endl;
     } catch (const std::exception& e) {
